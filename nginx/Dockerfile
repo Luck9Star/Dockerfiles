@@ -1,4 +1,5 @@
 FROM debian:jessie
+WORKDIR /
 RUN apt-get update && apt-get install -y git wget make gcc libpcre3-dev zlib1g-dev
 RUN git clone -b OpenSSL_1_0_2-stable --single-branch https://github.com/openssl/openssl/ && git clone https://github.com/cloudflare/sslconfig
 RUN cd openssl && patch -p1 < ../sslconfig/patches/openssl__chacha20_poly1305_cf.patch && cd ..
