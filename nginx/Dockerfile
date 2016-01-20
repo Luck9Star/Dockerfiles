@@ -9,7 +9,7 @@ RUN wget -qO- http://nginx.org/download/nginx-1.9.9.tar.gz | tar -xvz && mv ngin
 --with-http_realip_module \
 --with-openssl=/openssl \
 && make && make install && ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx
-RUN apt-get remove --auto-remove -y libpcre3-dev zlib1g-dev git wget make gcc && rm -rf /var/lib/apt/lists/*
+RUN apt-get remove --auto-remove -y libpcre3-dev zlib1g-dev git wget make gcc && rm -rf /var/lib/apt/lists/* &7 rm -rf /nginx && rm -rf /openssl
 # forward request and error logs to docker log collector
 RUN mkdir /var/log/nginx/ && ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
 
