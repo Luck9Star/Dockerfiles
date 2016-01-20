@@ -10,7 +10,7 @@ make && make install && ln -s /usr/local/nginx/sbin/nginx /usr/bin/nginx &&\
 apt-get remove --auto-remove -y libpcre3-dev zlib1g-dev git wget make gcc && rm -rf /var/lib/apt/lists/* && rm -rf nginx && rm -rf openssl
 # forward request and error logs to docker log collector
 
-RUN mkdir /var/log/nginx/ && ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
+RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
 
 VOLUME ["/var/cache/nginx"]
 
