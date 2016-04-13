@@ -1,6 +1,6 @@
 FROM debian:jessie
 MAINTAINER Luck9Star <hadyenvip@gmail.com>
-ENV NGINX_VERSION 1.9.11
+ENV NGINX_VERSION 1.9.14
 ENV OPENSSL_VERSION 1_0_2
 RUN apt-get update && apt-get install -y git wget make gcc libpcre3-dev zlib1g-dev &&\
 git clone -b OpenSSL_${OPENSSL_VERSION}-stable --single-branch https://github.com/openssl/openssl/ && git clone https://github.com/cloudflare/sslconfig &&\
